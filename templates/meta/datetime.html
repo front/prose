@@ -1,0 +1,15 @@
+<div class='form-item'>
+  <label for='<%= meta.name %>'><%= meta.label %></label>
+  <% if (meta.help) { %><small class='deemphasize'><%= meta.help %></small><% } %>
+  <fieldset>
+    <input class='metafield' type='text' name='<%= meta.name %>' value='<%= meta.value %>' data-type='<%= meta.type %>' placeholder='<%= meta.placeholder %>' readonly/>
+  </fieldset>
+</div>
+<script>
+  setTimeout(function () {
+    $('input.metafield[name="date"]').datetimepicker({
+      format:'Y-m-d H:i',
+      step: 5
+    });
+  }, 400);
+</script>
