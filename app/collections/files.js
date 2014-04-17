@@ -42,7 +42,7 @@ module.exports = Backbone.Collection.extend({
       var pathA = a.get('path');
       var pathB = b.get('path');
 
-      var regex = /^_posts\/.*$/
+      var regex = /^_posts\/.*$/;
 
       if (typeA === typeB && typeA === 'file' && regex.test(pathA) && regex.test(pathB)) {
         // Reverse alphabetical
@@ -70,7 +70,7 @@ module.exports = Backbone.Collection.extend({
         branch: this.branch,
         collection: this,
         repo: this.repo
-      })
+      });
     }).bind(this));
   },
 
@@ -141,7 +141,7 @@ module.exports = Backbone.Collection.extend({
                 defaults = jsyaml.safeLoad(raw);
 
                 if (defaults.date === "CURRENT_DATETIME") {
-                  var current = (new Date()).format('Y-m-d H:i');
+                  var current = moment().format('YYYY-MM-DD HH:mm');
                   defaults.date = current;
                   raw = raw.replace("CURRENT_DATETIME", current);
                 }

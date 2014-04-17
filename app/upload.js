@@ -42,6 +42,7 @@ module.exports = {
   drop: function(e, cb) {
     e.preventDefault();
     $(e.currentTarget).removeClass('drag-over');
+    $('#post').removeClass('drag-over');    // Hack to remove the overlay
 
     e = e.originalEvent
     var files = e.dataTransfer.files;
