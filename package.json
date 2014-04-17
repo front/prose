@@ -15,7 +15,8 @@
     "queue-async": "~1.0.3",
     "diff": "~1.0.4",
     "deepmerge": "~0.2.7",
-    "ignore": "~2.2.7"
+    "ignore": "~2.2.7",
+    "moment": "^2.6.0"
   },
   "keywords": [
     "editor",

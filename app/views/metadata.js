@@ -85,6 +85,20 @@ module.exports = Backbone.View.extend({
                 variable: 'meta'
               }));
               break;
+            case 'datetime':
+              var datetime = {
+                name: data.name,
+                label: data.field.label,
+                help: data.field.help,
+                value: data.field.value,
+                placeholder: data.field.placeholder,
+                type: 'text'
+              };
+
+              form.append(_.template(templates.meta.datetime, datetime, {
+                variable: 'meta'
+              }));
+              break;
             case 'textarea':
               var id = util.stringToUrl(data.name);
               var textarea = {
