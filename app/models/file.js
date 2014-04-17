@@ -4,6 +4,8 @@ var Backbone = require('backbone');
 var jsyaml = require('js-yaml');
 var util = require('.././util');
 
+var moment = require('moment');
+
 module.exports = Backbone.Model.extend({
   idAttribute: 'path',
 
@@ -15,7 +17,7 @@ module.exports = Backbone.Model.extend({
       return !!options.clone;
     };
 
-    this.placeholder = new Date().format('Y-m-d') + '-your-filename.md';
+    this.placeholder = moment().format('YYYY-MM-DD') + '-your-filename.md';
     var path = attributes.path.split('?')[0];
 
     // Append placeholder name if file is new and
